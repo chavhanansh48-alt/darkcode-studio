@@ -4,226 +4,344 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Soni Chinese Center</title>
+
+<title>DarkCode Studio | Web Development</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:Arial,sans-serif;background:#790000;color:white}
-header{background:#d00000;padding:18px 12px;text-align:center}
-.logo{font-size:27px;font-weight:bold}
-nav{margin-top:15px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-weight:bold}
-.hero{padding:55px 15px;text-align:center;background:linear-gradient(135deg,#180000,#a00000,#ed0000)}
-.hero .foodemoji{font-size:55px}
-.hero h1{font-size:clamp(32px,8vw,52px);margin:12px 0}
-.hero p{line-height:1.8;margin-bottom:20px}
-.btn{display:inline-block;background:#f00000;color:white;border:1px solid white;border-radius:30px;padding:13px 22px;text-decoration:none;font-weight:bold;cursor:pointer;margin:5px}
-.info{background:#c90000;display:flex;justify-content:space-around;flex-wrap:wrap;gap:18px;text-align:center;padding:22px 10px;line-height:1.8}
-section{padding:35px 4%}
-h2.heading{text-align:center;font-size:32px;margin-bottom:12px}
-.subtitle{text-align:center;margin-bottom:24px;color:#ffe0e0}
-.filters{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-bottom:22px}
-.filters button{padding:10px 14px;border-radius:25px;border:1px solid white;background:#450000;color:white;cursor:pointer}
-.filters button.active{background:#f00000}
-.menu{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
-.card{background:white;color:#222;border-radius:12px;overflow:hidden}
-.pic{height:110px;background:linear-gradient(135deg,#ffdfc5,#ffad91);display:flex;justify-content:center;align-items:center;font-size:55px}
-.details{padding:11px}
-.details h3{font-size:15px;min-height:36px}
-.price{color:#c00000;font-weight:bold;margin:8px 0}
-.add{width:100%;background:#e00000;color:white;border:0;border-radius:20px;padding:10px 3px;font-weight:bold;cursor:pointer}
-.cartbox{background:white;color:#222;border-radius:14px;padding:18px;max-width:650px;margin:auto}
-.cartbox h3{color:#c00000;margin-bottom:12px}
-.cartrow{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:12px 0;border-bottom:1px solid #ddd}
-.cartrow button{padding:5px 8px;cursor:pointer}
-.total{text-align:right;font-weight:bold;font-size:22px;color:#c00000;margin:18px 0}
-input,textarea{width:100%;padding:12px;margin:8px 0 14px;border:1px solid #bbb;border-radius:7px;font-size:16px}
-.order{width:100%;padding:14px;background:#168b43;color:white;border:0;border-radius:8px;font-size:17px;font-weight:bold;cursor:pointer}
-.about{text-align:center;background:#4b0000;line-height:1.9}
-.contact{text-align:center;background:#c00000;line-height:2}
-footer{text-align:center;background:#220000;padding:20px;line-height:1.8}
-@media(min-width:700px){.menu{grid-template-columns:repeat(4,minmax(0,1fr))}.pic{height:140px}}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #050505;
+  color: white;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  padding: 22px 7%;
+  background: #101010;
+  border-bottom: 2px solid #ff2020;
+}
+
+.logo {
+  font-size: 25px;
+  font-weight: bold;
+  color: #ff3030;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 8px;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: #ff3030;
+}
+
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: radial-gradient(
+    circle at top,
+    #351010 0%,
+    #100707 40%,
+    #050505 75%
+  );
+}
+
+.hero h1 {
+  font-size: 42px;
+  margin-bottom: 20px;
+}
+
+.red-text {
+  color: #ff3030;
+}
+
+.hero p {
+  color: #ccc;
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.8;
+}
+
+.btn {
+  display: inline-block;
+  margin: 22px 6px 0;
+  padding: 14px 23px;
+  border-radius: 7px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.2s;
+}
+
+.btn-red {
+  color: white;
+  background: #e50914;
+}
+
+.btn-dark {
+  color: white;
+  border: 1px solid #ff3030;
+  background: #151515;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 55px 7%;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.services {
+  display: grid;
+  grid-template-columns:
+    repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #121212;
+  border: 1px solid #303030;
+  border-top: 3px solid #ff2020;
+  padding: 28px 20px;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: #bbb;
+  line-height: 1.7;
+}
+
+.projects {
+  background: #0c0c0c;
+}
+
+.project-card {
+  background: #171717;
+  border: 1px solid #333;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 16px;
+}
+
+.project-card p {
+  color: #bbb;
+  margin-top: 10px;
+  line-height: 1.7;
+}
+
+.contact p {
+  color: #ccc;
+  line-height: 1.8;
+}
+
+.social {
+  display: inline-block;
+  width: 220px;
+  max-width: 100%;
+  margin: 10px 5px;
+  padding: 15px;
+  border-radius: 8px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.instagram {
+  background: #c2185b;
+}
+
+.telegram {
+  background: #168ac0;
+}
+
+.social:hover {
+  opacity: 0.85;
+}
+
+footer {
+  padding: 25px 15px;
+  text-align: center;
+  background: #101010;
+  border-top: 1px solid #ff2020;
+  color: #aaa;
+  line-height: 1.9;
+}
+
+footer span {
+  color: #ff3030;
+}
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="logo">🍜 SONI CHINESE CENTER ❤️</div>
-<nav>
-<a href="#home">Home</a>
-<a href="#menu">Menu</a>
-<a href="#cart">Cart 🛒 (<span id="count">0</span>)</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
+  <div class="logo">DarkCode Studio</div>
+
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#projects">Samples</a>
+    <a href="#contact">Contact</a>
+  </nav>
 </header>
 
+<main>
+
 <div class="hero" id="home">
-<div class="foodemoji">🥢 🍜 🥡</div>
-<h1>SONI CHINESE CENTER</h1>
-<p>Authentic Chinese Taste<br>Fresh • Tasty • Delicious<br>Now at Your Doorstep!</p>
-<a class="btn" href="#menu">🍜 Explore Menu</a>
-<a class="btn" href="#cart">🛵 Order Online</a>
+  <h1>
+    Build Your <span class="red-text">Digital Future</span>
+  </h1>
+
+  <p>
+    Welcome to DarkCode Studio. We create modern,
+    stylish and mobile-friendly websites for
+    businesses, shops and creators.
+  </p>
+
+  <a href="#projects" class="btn btn-red">
+    Explore Samples
+  </a>
+
+  <a href="#contact" class="btn btn-dark">
+    Contact Us
+  </a>
 </div>
 
-<div class="info">
-<div>📞 <b>Phone</b><br>01125532553</div>
-<div>📍 <b>Address</b><br>Zone Chowk, Nagpur-441110</div>
-<div>🕙 <b>Opening Hours</b><br>10 AM – 11 PM Daily</div>
-</div>
+<section id="services">
+  <h2 class="section-title">
+    Our <span class="red-text">Services</span>
+  </h2>
 
-<section id="menu">
-<h2 class="heading">❤️ Our Menu</h2>
-<p class="subtitle">Delicious food made fresh for you!</p>
-<div class="filters">
-<button class="active" onclick="filterMenu('All',this)">All Items</button>
-<button onclick="filterMenu('Starters',this)">Starters</button>
-<button onclick="filterMenu('Noodles',this)">Noodles</button>
-<button onclick="filterMenu('Rice',this)">Rice</button>
-<button onclick="filterMenu('Soup',this)">Soup</button>
-</div>
-<div class="menu" id="menuGrid"></div>
+  <div class="services">
+
+    <div class="card">
+      <h3>Business Websites</h3>
+      <p>
+        Websites for shops, restaurants,
+        startups and small businesses.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Portfolio Websites</h3>
+      <p>
+        Display your skills, projects
+        and achievements professionally.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Landing Pages</h3>
+      <p>
+        Attractive pages for products,
+        services and online promotions.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>AI Web Interfaces</h3>
+      <p>
+        Modern interfaces for AI tools
+        and interactive web projects.
+      </p>
+    </div>
+
+  </div>
 </section>
 
-<section id="cart">
-<h2 class="heading">🛒 Your Cart</h2>
-<p class="subtitle">Review your order below</p>
-<div class="cartbox">
-<h3>Order Summary</h3>
-<div id="cartItems">Your cart is empty.</div>
-<div class="total">Total: ₹<span id="total">0</span></div>
-<label>Your Name</label>
-<input id="customerName" placeholder="Enter your name">
-<label>Delivery Address</label>
-<textarea id="customerAddress" rows="3" placeholder="Enter your full address"></textarea>
-<button class="order" onclick="checkout()">Order on WhatsApp</button>
-<p style="font-size:12px;margin-top:12px">Delivery availability and charges will be confirmed by the shop.</p>
-</div>
-</section>
+<section class="projects" id="projects">
+  <h2 class="section-title">
+    Website <span class="red-text">Samples</span>
+  </h2>
 
-<section class="about" id="about">
-<h2 class="heading">About Us ❤️</h2>
-<p>Welcome to Soni Chinese Center!<br>Enjoy your favourite Chinese-style food.<br>Good Food • Happy Mood!</p>
+  <div class="project-card">
+    <h3>Restaurant Website</h3>
+    <p>
+      A stylish menu and contact page
+      for a food business.
+    </p>
+  </div>
+
+  <div class="project-card">
+    <h3>Business Website</h3>
+    <p>
+      A professional online presence
+      for a growing business.
+    </p>
+  </div>
+
+  <div class="project-card">
+    <h3>Personal Portfolio</h3>
+    <p>
+      A modern portfolio to showcase
+      work and creative skills.
+    </p>
+  </div>
 </section>
 
 <section class="contact" id="contact">
-<h2 class="heading">Contact Us</h2>
-<p>📍 Zone Chowk, Nagpur-441110</p>
-<p>🕙 10 AM to 11 PM Daily</p>
-<p>📞 01125532553</p>
-<a class="btn" href="tel:01125532553">Call Now</a>
+  <h2 class="section-title">
+    Let's <span class="red-text">Connect</span>
+  </h2>
+
+  <p>
+    Need a website for your business?
+    Contact DarkCode Studio!
+  </p>
+
+  <!-- Replace with your Instagram username -->
+  <a
+    class="social instagram"
+    href="https://instagram.com/YOUR_INSTAGRAM"
+    target="_blank"
+    rel="noopener noreferrer">
+    Instagram Chat
+  </a>
+
+  <!-- Replace with your Telegram username -->
+  <a
+    class="social telegram"
+    href="https://t.me/YOUR_TELEGRAM"
+    target="_blank"
+    rel="noopener noreferrer">
+    Telegram Chat
+  </a>
 </section>
 
+</main>
+
 <footer>
-🍜 Soni Chinese Center ❤️<br>
-© 2026 All Rights Reserved
+  <p>© 2026 <span>DarkCode Studio</span></p>
+  <p>Creative Websites. Bold Ideas. Better Business.</p>
 </footer>
 
-<script>
-const foods=[
-{id:1,name:"Spring Rolls",price:80,cat:"Starters",emoji:"🥟"},
-{id:2,name:"Chilli Paneer",price:120,cat:"Starters",emoji:"🧀"},
-{id:3,name:"Veg Manchurian",price:100,cat:"Starters",emoji:"🥦"},
-{id:4,name:"Veg Momos",price:90,cat:"Starters",emoji:"🥟"},
-{id:5,name:"Veg Hakka Noodles",price:100,cat:"Noodles",emoji:"🍜"},
-{id:6,name:"Schezwan Noodles",price:120,cat:"Noodles",emoji:"🍝"},
-{id:7,name:"Chicken Noodles",price:150,cat:"Noodles",emoji:"🍜"},
-{id:8,name:"Veg Fried Rice",price:100,cat:"Rice",emoji:"🍚"},
-{id:9,name:"Chicken Fried Rice",price:140,cat:"Rice",emoji:"🍛"},
-{id:10,name:"Schezwan Rice",price:120,cat:"Rice",emoji:"🍚"},
-{id:11,name:"Hot & Sour Soup",price:80,cat:"Soup",emoji:"🍲"},
-{id:12,name:"Sweet Corn Soup",price:70,cat:"Soup",emoji:"🥣"}
-];
-
-let cart={};
-
-function renderMenu(category="All"){
-const grid=document.getElementById("menuGrid");
-grid.innerHTML="";
-foods.filter(f=>category==="All"||f.cat===category).forEach(f=>{
-const card=document.createElement("div");
-card.className="card";
-const pic=document.createElement("div");
-pic.className="pic";
-pic.textContent=f.emoji;
-const details=document.createElement("div");
-details.className="details";
-const name=document.createElement("h3");
-name.textContent=f.name;
-const price=document.createElement("p");
-price.className="price";
-price.textContent="₹"+f.price;
-const btn=document.createElement("button");
-btn.className="add";
-btn.textContent="🛒 Add to Cart";
-btn.onclick=()=>{cart[f.id]=(cart[f.id]||0)+1;renderCart()};
-details.append(name,price,btn);
-card.append(pic,details);
-grid.appendChild(card);
-});
-}
-
-function filterMenu(category,button){
-document.querySelectorAll(".filters button").forEach(b=>b.classList.remove("active"));
-button.classList.add("active");
-renderMenu(category);
-}
-
-function renderCart(){
-const box=document.getElementById("cartItems");
-box.innerHTML="";
-let total=0,count=0;
-Object.keys(cart).forEach(id=>{
-const f=foods.find(x=>x.id===Number(id));
-const qty=cart[id];
-total+=f.price*qty;
-count+=qty;
-const row=document.createElement("div");
-row.className="cartrow";
-const label=document.createElement("span");
-label.textContent=f.name+" × "+qty+" = ₹"+(f.price*qty);
-const controls=document.createElement("span");
-const minus=document.createElement("button");
-minus.textContent="−";
-minus.onclick=()=>{cart[id]--;if(cart[id]<=0)delete cart[id];renderCart()};
-const plus=document.createElement("button");
-plus.textContent="+";
-plus.onclick=()=>{cart[id]++;renderCart()};
-controls.append(minus,plus);
-row.append(label,controls);
-box.appendChild(row);
-});
-if(count===0)box.textContent="Your cart is empty.";
-document.getElementById("total").textContent=total;
-document.getElementById("count").textContent=count;
-}
-
-function checkout(){
-if(Object.keys(cart).length===0){alert("Please add food to your cart!");return}
-const name=document.getElementById("customerName").value.trim();
-const address=document.getElementById("customerAddress").value.trim();
-if(!name||!address){alert("Please enter your name and delivery address.");return}
-
-let message="Hello Soni Chinese Center! I want to order:\n";
-message+="Name: "+name+"\nAddress: "+address+"\n\n";
-let total=0;
-Object.keys(cart).forEach(id=>{
-const f=foods.find(x=>x.id===Number(id));
-message+=f.name+" x "+cart[id]+" = Rs. "+f.price*cart[id]+"\n";
-total+=f.price*cart[id];
-});
-message+="\nTotal: Rs. "+total;
-
-const whatsappNumber="91XXXXXXXXXX";
-if(whatsappNumber.includes("X")){
-alert("WhatsApp setup pending. Code mein 91XXXXXXXXXX ko shop ke actual WhatsApp number se replace karo.");
-return;
-}
-window.open("https://wa.me/"+whatsappNumber+"?text="+encodeURIComponent(message),"_blank");
-}
-
-renderMenu();
-renderCart();
-</script>
 </body>
 </html>
